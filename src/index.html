@@ -7,11 +7,25 @@
   <div class="site-container">
     @include('partials/header.html')
     <main class="main">
-      <picture>
-        <source srcset="img/cover.avif" type="image/avif">
-        <source srcset="img/cover.webp" type="image/webp">
-        <img loading="lazy" src="img/cover.jpg" class="image" width="300" height="300" alt="Обложка канала MaxGraph">
-      </picture>
+      <div class="weather">
+        <div class="weather-media">
+          <video class="weather-media__video" src="./video.mp4" autoplay muted loop></video>
+        </div>
+
+        <div class="weather-content">
+
+          <form action="#" class="form">
+            <input class="weather__input input-reset" type="text" name="name" placeholder="Введите название города">
+            <button class="weather__btn btn-reset" type="button">Go!</button>
+          </form>
+
+          <div class="city"></div>
+          <div class="img"></div>
+          <div class="description"></div>
+          <div class="temp"></div>
+          <div class="pressure"></div>
+          <div class="velocity"></div>
+        </div>
     </main>
 
     @include('partials/footer.html')

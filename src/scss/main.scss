@@ -7,10 +7,111 @@
 // подключения компонентов страницы
 @import "./components/header";
 
-// тестовые стили, удалите их
-.page__body {
+.weather {
+  height: 100vh;
+  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: var(--vh);
+  align-items: center;
+
+  &__input {
+    max-width: 300px;
+    width: 100%;
+    height: 50px;
+    background-color: rgb(255, 157, 0);
+    border-radius: 20px;
+    padding: 0 20px;
+        margin-right: 10px;
+
+    &:focus {
+      opacity: 0.5;
+    }
+
+    &::placeholder {
+      font-family: var(--muller);
+      font-size: 20px;
+      line-height: 2;
+      color: white;
+    }
+  }
+
+  &__btn {
+    background-color: rgb(255, 157, 0);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-family: var(--muller);
+    font-size: 20px;
+    font-weight: 700;
+    transition: border 0.5s, opacity 0.5s;
+    color: white;
+
+    &:hover {
+      border: 2px solid green;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+  }
+}
+
+.city {
+  font-family: var(--muller);
+  font-size: 50px;
+  text-align: center;
+  margin-top: 20px;
+  font-weight: 700;
+  color: aliceblue;
+}
+
+.temp,
+.pressure,
+.velocity,
+.description {
+  font-size: 20px;
+  line-height: 2;
+  font-weight: 700;
+  color: aliceblue;
+}
+
+.weather-media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  &__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-height: 100%;
+    min-height: 100%;
+    object-fit: cover;
+  }
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+
+.weather-content {
+  z-index: 10;
+  text-align: center;
+  width: 400px;
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
 }
